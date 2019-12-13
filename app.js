@@ -1,13 +1,25 @@
 var main = function () {
     "use strict"
+    var $button = $(".comment-input button");
 
-    $(".comment-input button").on("click", function (event) {
-        var $new_comment = $("<p>")
-        .text($(".comment-input input").val())
+    $button.on("click", function (event) {
 
+    
+    var $new_comment;
 
-        $(".comments").append($new_comment);
-    });
+    
+
+    var $input = $(".comment-input input").val();
+
+    var $comments = $(".comments")
+
+    if ($input !== "") {
+        $new_comment = $("<p>").text($input);
+
+        $comments.append($new_comment);
+    }
+    })
+        
 };
 
 $(document).ready(main);
